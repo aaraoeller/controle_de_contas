@@ -28,9 +28,11 @@ if ($result) {
     if ($result->num_rows > 0) {
         // Itera pelos resultados e os exibe
         while ($row = $result->fetch_assoc()) {
-            // Exemplo: exibindo o valor da coluna "DESCRICAO"
-            echo "Descrição: " . $row['DESCRICAO'] . "<br>";
-            // Exiba outras colunas que você precisa aqui
+            // Exiba os resultados de todas as colunas
+            foreach ($row as $key => $value) {
+                echo $key . ": " . $value . "<br>";
+            }
+            echo "<br>";
         }
     } else {
         echo "A consulta não retornou resultados.";
