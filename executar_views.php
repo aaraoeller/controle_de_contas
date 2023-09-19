@@ -20,15 +20,19 @@ $result = $mysqli->query($query);
 if ($result) {
     $row = $pagar->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_A_PAGAR'];
+}
 
 if ($result) {
     $row = $receber->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_A_RECEBER'];
+}
 
 if ($result) {
     $row = $geral->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_GERAL'];
-} else {
+}
+
+else {
     echo "Erro ao executar a view: " . $mysqli->error;
 }
 
