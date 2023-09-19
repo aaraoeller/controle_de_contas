@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contas a Pagar e Receber</title>
+</head>
+<body>
+    <h1>Inserir Contas</h1>
+    <form action="inserir_conta.php" method="post">
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" required><br>
+
+        <label for="valor">Valor:</label>
+        <input type="text" name="valor" required><br>
+
+        <label for="data">Data de Vencimento:</label>
+        <input type="text" name="data" required><br>
+
+        <label for="tipo">Tipo:</label>
+        <select name="tipo">
+            <option value="pagar">Conta a Pagar</option>
+            <option value="receber">Conta a Receber</option>
+        </select><br>
+
+        <input type="submit" value="Inserir Conta">
+    </form>
+
+    <h2>Executar Views</h2>
+    <form action="executar_views.php" method="post">
+        <input type="submit" name="total_pagar" value="Total a Pagar">
+        <input type="submit" name="total_receber" value="Total a Receber">
+        <input type="submit" name="total_geral" value="Total Geral">
+    </form>
+
+    <!-- Resultados das Views serão exibidos aqui -->
+    <div id="resultado"></div>
+</body>
+</html>
