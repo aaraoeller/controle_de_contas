@@ -17,16 +17,16 @@ if (isset($_POST['total_pagar'])) {
 
 $result = $mysqli->query($query);
 
-if ($result) {
-    $row = $result->fetch_assoc();
+if ($pagar) {
+    $row = $pagar->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_A_PAGAR'];
 
-if ($result) {
-    $row = $result->fetch_assoc();
+if ($receber) {
+    $row = $receber->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_A_RECEBER'];
 
-if ($result) {
-    $row = $result->fetch_assoc();
+if ($geral) {
+    $row = $geral->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_GERAL'];
 } else {
     echo "Erro ao executar a view: " . $mysqli->error;
