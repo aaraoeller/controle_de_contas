@@ -17,17 +17,17 @@ if (isset($_POST['total_pagar'])) {
 
 $result = $mysqli->query($query);
 
-if ($result) {
+if ($pagar) {
     $row = $pagar->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_A_PAGAR'];
 }
 
-if ($result) {
+if ($receber) {
     $row = $receber->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_A_RECEBER'];
 }
 
-if ($result) {
+if ($geral) {
     $row = $geral->fetch_assoc();
     echo "Resultado: " . $row['TOTAL_GERAL'];
 }
