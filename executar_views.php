@@ -22,13 +22,18 @@ $result = $mysqli->query($query);
 
 if ($result) {
     // Exibe o nome da view
-    echo "Resultado da View: " . $query . "<br>";
+    echo "Resultado da View: " . $viewName . "<br>";
     
-    // Processa os resultados da consulta
-    while ($row = $result->fetch_assoc()) {
-        // Aqui você pode acessar os resultados da consulta específica
-        // Exemplo: echo "Descrição: " . $row['DESCRICAO'] . "<br>";
-        // Lembre-se de usar os nomes das colunas das views corretamente
+    // Verifica se há resultados da consulta
+    if ($result->num_rows > 0) {
+        // Itera pelos resultados e os exibe
+        while ($row = $result->fetch_assoc()) {
+            // Exemplo: exibindo o valor da coluna "DESCRICAO"
+            echo "Descrição: " . $row['DESCRICAO'] . "<br>";
+            // Exiba outras colunas que você precisa aqui
+        }
+    } else {
+        echo "A consulta não retornou resultados.";
     }
 } else {
     echo "Erro ao executar a view: " . $mysqli->error;
