@@ -1,6 +1,6 @@
 <?php
 // Conexão com o banco de dados
-$mysqli = new mysqli("localhost", "root@localhost", "", "contas");
+$mysqli = new mysqli("localhost", "root", "", "contas");
 
 if ($mysqli->connect_error) {
     die("Erro na conexão com o banco de dados: " . $mysqli->connect_error);
