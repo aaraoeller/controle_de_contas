@@ -29,7 +29,7 @@ if ($result) {
         // Itera pelos resultados e os exibe
         while ($row = $result->fetch_assoc()) {
             // Exiba os resultados de todas as colunas
-            foreach ($row => $value) {
+            foreach ($row = $value) {
                 echo $value;
             }
             echo "<br>";
