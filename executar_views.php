@@ -19,7 +19,7 @@ $result = $mysqli->query($query);
 
 if ($result) {
     $row = $result->fetch_assoc();
-    echo "Resultado: " . $row['TOTAL_A_PAGAR'];
+    echo "Resultado: " . $row['total_pagar'];
 }
 
 else {
