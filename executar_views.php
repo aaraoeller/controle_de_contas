@@ -22,7 +22,7 @@ $result = $mysqli->query($query);
 
 if ($result) {
     // Exibe o nome da view
-    echo "Resultado da View: " . $viewName . "<br>";
+    echo "Resultado da View: " . $query . "<br>";
     
     // Processa os resultados da consulta
     while ($row = $result->fetch_assoc()) {
