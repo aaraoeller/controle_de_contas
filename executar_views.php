@@ -16,6 +16,9 @@ if (isset($_POST['total_pagar'])) {
 } elseif (isset($_POST['total_geral'])) {
     $query = "SELECT * FROM V_CONTAS_TOTAL";
     $viewName = "Total Geral";
+} elseif (isset($_POST['lista_contas'])) {
+    $query = "SELECT * FROM V_LISTA_CONTAS";
+    $viewName = "Lista geral de contas";
 }
 
 $result = $mysqli->query($query);
