@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contas a Receber</title>
+</head>
+<body>
+    <h1>Contas a Receber</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" required><br>
+        <label for="valor">Valor:</label>
+        <input type="text" name="valor" required><br>
+        <label for="data_vencimento">Data de Vencimento:</label>
+        <input type="text" name="data_vencimento" required><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+    <a href="{% url 'visualizar_contas' %}">Visualizar Contas</a>
+</body>
+</html>
