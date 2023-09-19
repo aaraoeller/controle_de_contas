@@ -7,9 +7,9 @@ if ($mysqli->connect_error) {
 }
 
 // Verificar qual botão foi clicado
-if (isset($_POST['total_pagar'])) {
+if (isset($_POST['total_a_pagar'])) {
     $query = "SELECT * FROM V_TOTAL_PAGAR";
-} elseif (isset($_POST['total_receber'])) {
+} elseif (isset($_POST['total_a_receber'])) {
     $query = "SELECT * FROM V_TOTAL_RECEBER";
 } elseif (isset($_POST['total_geral'])) {
     $query = "SELECT * FROM V_CONTAS_TOTAL";
@@ -19,9 +19,7 @@ $result = $mysqli->query($query);
 
 if ($result) {
     $row = $result->fetch_assoc();
-    echo "Resultado: " . $row['V_TOTAL_PAGAR'];
-    echo "Resultado: " . $row['V_TOTAL_RECEBER'];
-    echo "Resultado: " . $row['V_CONTAS_TOTAL'];
+    echo "Resultado: " . $row['TOTAL_A_PAGAR'];
 } else {
     echo "Erro ao executar a view: " . $mysqli->error;
 }
