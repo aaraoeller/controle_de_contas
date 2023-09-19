@@ -22,15 +22,15 @@ $result = $mysqli->query($query);
 
 if ($result) {
     // Exibe o nome da view
-    echo "Resultado da View: " . $viewName . "<br>";
+    echo "Resultado: " . $viewName . "<br>";
     
     // Verifica se há resultados da consulta
     if ($result->num_rows > 0) {
         // Itera pelos resultados e os exibe
         while ($row = $result->fetch_assoc()) {
             // Exiba os resultados de todas as colunas
-            foreach ($row as $key => $value) {
-                echo $key . ": " . $value . "<br>";
+            foreach ($row => $value) {
+                echo $value;
             }
             echo "<br>";
         }
