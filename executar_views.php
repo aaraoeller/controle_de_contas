@@ -2,6 +2,7 @@
 // Conexão com o banco de dados
 $mysqli = new mysqli("localhost", "root", "", "contas");
 
+// Verificação de erros na conexão
 if ($mysqli->connect_error) {
     die("Erro na conexão com o banco de dados: " . $mysqli->connect_error);
 }
@@ -21,17 +22,18 @@ if (isset($_POST['total_pagar'])) {
     $viewName = "Lista geral de contas";
 }
 
+// execução da consulta SQL
 $result = $mysqli->query($query);
 
 if ($result) {
-    // Exibe o nome da view
+    // Exibe o resultado da View selecionada
     echo "Resultado: " . $viewName . "<br>";
     
     // Verifica se há resultados da consulta
     if ($result->num_rows > 0) {
         // Itera pelos resultados e os exibe
         while ($row = $result->fetch_assoc()) {
-            // Exiba os resultados de todas as colunas
+            // Exibe os resultados de todas as colunas
             foreach ($row as $value) {
                 echo $value;
             }
@@ -44,5 +46,6 @@ if ($result) {
     echo "Erro ao executar a view: " . $mysqli->error;
 }
 
+// Fechamento da conexão com o Banco de Dados
 $mysqli->close();
 ?>
