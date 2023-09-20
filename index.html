@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<Link rel="stylesheet" href="styles.css">
 <head>
     <title>Contas a Pagar e Receber</title>
 </head>
@@ -29,11 +30,16 @@
         <input type="submit" name="total_pagar" value="Total a Pagar">
         <input type="submit" name="total_receber" value="Total a Receber">
         <input type="submit" name="total_geral" value="Total Geral">
-        <!-- Adicione o botão para a view V_LISTA_CONTAS -->
         <input type="submit" name="lista_contas" value="Lista de Contas">
     </form>
 
     <!-- Resultados das Views serão exibidos aqui -->
-    <div id="resultado"></div>
+    <table>
+        <thead>
+            <tr>
+                <div id="resultado"></div>
+            </tr>
+        </thead>
+    </table>
 </body>
 </html>
