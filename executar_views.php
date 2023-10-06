@@ -39,6 +39,18 @@ if ($result) {
             }
             echo "<br>";
         }
+
+        while ($row = $result->fetch_assoc()) {
+            // Exibe os resultados em uma tabela para melhor formatação
+            echo "<tr class='tipo-" . strtolower($row['Tipo']) . "'>";
+            echo "<td>" . $row['Tipo'] . "</td>";
+            echo "<td>" . $row['DESCRICAO'] . "</td>";
+            echo "<td>" . $row['VALOR'] . "</td>";
+            echo "<td>" . $row['VENCIMENTO'] . "</td>";
+            echo "</tr>";
+        }
+        
+
     } else {
         echo "A consulta não retornou resultados.";
     }
