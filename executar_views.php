@@ -28,28 +28,17 @@ $result = $mysqli->query($query);
 if ($result) {
     // Exibe o resultado da View selecionada
     echo "Resultado: " . $viewName . "<br>";
-
+    
     // Verifica se há resultados da consulta
     if ($result->num_rows > 0) {
-        // Exibe os resultados em uma tabela para melhor formatação
-        echo "<table border='1'>";
-        // Exibe os cabeçalhos da tabela
-        echo "<tr>";
-        foreach ($result->fetch_assoc() as $key => $value) {
-            echo "<th>" . $key . "</th>";
-        }
-        echo "</tr>";
-
         // Itera pelos resultados e os exibe
         while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
             // Exibe os resultados de todas as colunas
             foreach ($row as $value) {
-                echo "<td>" . $value . "</td>";
+                echo $value;
             }
-            echo "</tr>";
+            echo "<br>";
         }
-        echo "</table>";
     } else {
         echo "A consulta não retornou resultados.";
     }
