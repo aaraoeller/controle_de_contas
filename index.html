@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<Link rel="stylesheet" href="styles.css">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Controle de Contas</title>
 </head>
+
 <body>
     <h1>Inserir Contas</h1>
-    <form id="inserirForm" action="inserir_conta.php" method="post">
-        <!-- ... (seu código de formulário aqui) ... -->
+    <form action="inserir_conta.php" method="post">
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="descricao" required><br>
+
+        <label for="valor">Valor:</label>
+        <input type="text" name="valor" required><br>
+
+        <label for="data">Data de Vencimento:</label>
+        <input type="text" name="data" required><br>
+
+        <label for="tipo">Tipo:</label>
+        <select name="tipo">
+            <option value="pagar">Conta a Pagar</option>
+            <option value="receber">Conta a Receber</option>
+        </select><br>
+        
         <div id="mensagem"></div>
         <input type="submit" value="Inserir Conta">
     </form>
 
     <h2>Relatórios</h2>
-    <form id="relatoriosForm">
-        <!-- ... (seu código de botões aqui) ... -->
+    <form action="executar_views.php" method="post">
+        <input type="submit" name="total_pagar" value="Total a Pagar">
+        <input type="submit" name="total_receber" value="Total a Receber">
+        <input type="submit" name="total_geral" value="Total Geral">
+        <input type="submit" name="lista_contas" value="Lista de Contas">
     </form>
 
     <!-- Resultados das Views serão exibidos aqui -->
-    <div id="resultado"></div>
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="scripts.js"></script>
+                <div id="resultado"></div>
 </body>
+
 </html>
