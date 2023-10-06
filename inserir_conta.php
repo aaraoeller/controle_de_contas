@@ -22,7 +22,9 @@ if ($tipo === 'pagar') {
 
 // Execução da consulta SQL
 if ($mysqli->query($query)) {
-    echo "Conta inserida com sucesso!";
+    echo "<script>exibirMensagem('Conta inserida com sucesso!');</script>";
+}
+
 } else {
     echo "Erro ao inserir conta: " . $mysqli->error;
 }
