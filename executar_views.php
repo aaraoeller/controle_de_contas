@@ -1,6 +1,6 @@
 <?php
 // Conexão com o banco de dados
-$mysqli = new mysqli("localhost", "root", "", "contas");
+$mysqli = new mysqli("hostname", "username", "password", "database");
 
 // Verificação de erros na conexão
 if ($mysqli->connect_error) {
